@@ -1,0 +1,46 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    height: fit-content;
+    } 
+
+.cover {
+max-width: 600px;
+margin: 0 auto;
+padding: 2rem;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.list-item {
+margin-bottom: 0.5rem;
+}
+
+.highlight {
+font-weight: bold;
+color: #333;
+}
+
+.message {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: pulse 2s infinite alternate;
+    height: fit-content;
+  }
