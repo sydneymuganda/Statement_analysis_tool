@@ -6,7 +6,7 @@
   
  }
  body{
-  background: rgb(248, 248, 250);
+  background: rgb(82, 82, 212);
   padding: 20px;
   place-items: normal ;
  }
@@ -18,10 +18,13 @@
     display: flex;
     gap:1;
     background: rgb(242, 242, 245);
+    height: auto;
   }
   .dashboard{
     display: flex;
     gap: 20px;
+    object-fit: cover;
+    height: 100%;
 
   }
   

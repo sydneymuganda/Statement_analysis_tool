@@ -4,9 +4,9 @@ import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
 
 const Bank = () => {
   return (
-    <div className='page'>
+  
       <Banking />
-    </div>
+    
   );
 };
 

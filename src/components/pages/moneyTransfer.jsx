@@ -1,11 +1,8 @@
 import React from "react";
-
+import Money from "../contents/Money";
 const Transfers =()=>{
     return (
-        <div className='page'>
-          <h1>Transfers</h1>
-          {/* Add your JSX code here */}
-        </div>
+      <Money />
       );
 
 

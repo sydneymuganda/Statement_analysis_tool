@@ -5,14 +5,15 @@ import '../../styles/pages.css';
 const Banking = () => {
     return (
       <div className='page'> 
-      <div>
+      
+      <div  id="bank-chart" class="chart-section">
         <h1>chart1</h1>
       </div>
 
       <div>
         chart2
       </div>
-      
+      <div className="table">
         <table>
 
             <caption> Banking Analysis</caption>
@@ -53,7 +54,8 @@ const Banking = () => {
             </tr>
 
             </table>
-        
+            </div>
+           
       </div>
     );
   };

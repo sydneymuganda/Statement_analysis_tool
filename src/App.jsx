@@ -9,6 +9,7 @@ import Loans from './components/pages/loans';
 import Transfers from './components/pages/moneyTransfer';
 import "./App.css";
 import {data} from "./Data/data";
+import Login from './components/pages/Login';
 
 
 
@@ -34,6 +35,8 @@ function App() {
         </div>
       </div>
     </Router>
+
+    //  <div> <Login /></div>
   
   )
 }

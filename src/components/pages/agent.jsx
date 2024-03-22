@@ -1,12 +1,10 @@
 import React from 'react';
-import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
+
+import Moneytransactions from '../contents/Transactions';
 
 const Agent = () => {
   return (
-    <div className='page'> 
-      <h1>AGENT</h1>
-      
-    </div>
+    <Moneytransactions />
   );
 };
 

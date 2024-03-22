@@ -6,38 +6,56 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 
 const CashAnalysis = () => {
     return (
-        <div>
-      <div id='message01' className='message'> 
-        <h1>hello <br /> jane Doe</h1>
+    <div className='page'> 
+        <div className="left">
+
+           <div id='message01' className='message'> 
+
+               <h3>hello <br /> jane Doe</h3>
         
-      </div>
-
-      <div id='time01' className="date">
-        <h1>Statement Analysis from:</h1> <br />
-        <h2> {data.info.start_date} <IoMdArrowRoundForward/>  {data.info.end_date} </h2>
-      </div>
-
-      <div id='balance01' className="balance">
-      <h1>available balance :</h1> <br />
-        <h2> {data.profile.current_wallet_balance} </h2>
-      </div>
-
-      <div id='details01' className="details">
-
-        <h1>active days :</h1> <br />
-        <h2> {data.info.total_days} </h2>
-        <h1>active transacting days :</h1> <br />
-        <h2> {data.info.total_active_days} </h2>
-        <h1> number of transaction made :</h1> <br />
-        <h2> {data.profile.number_of_transactions} </h2>
+        </div>
 
 
+        <div id='balance01' className="balance">
+           <h3>available balance :</h3> <br />
+           <h3> {data.profile.current_wallet_balance} </h3>
+        </div>
 
       </div>
-      <div id='chart01' className="chart">
-        <h1>Chart usage</h1>
-        <h1>Turnover from Transactions</h1>
-        {data.profile.turnover}
+
+      <div className="middle">
+
+           <div id='time01' className="date">
+
+          <h3>Statement Analysis from:</h3> <br />
+          <h3> {data.info.start_date} <IoMdArrowRoundForward/>  {data.info.end_date} </h3>
+
+          </div>
+
+    
+
+         <div id='details01' className="details">
+
+        <h3>active days :</h3> <br />
+        <h3> {data.info.total_days} </h3>
+        <h3>active transacting days :</h3> <br />
+        <h3> {data.info.total_active_days} </h3>
+        <h3> number of transaction made :</h3> <br />
+        <h3> {data.profile.number_of_transactions} </h3>
+
+        </div>
+
+      </div>
+
+      <div className="right">
+
+          <div id='chart01' className="chart">
+          <h1>Chart usage</h1>
+          <h1>Turnover from Transactions</h1>
+          {data.profile.turnover}
+
+      </div>
+
       </div>
       
       <div id='table01' className="table">
