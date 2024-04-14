@@ -1,32 +1,135 @@
 //require('dotenv').config();
 //console.log(process.env);
 
-async function uploadPDF(file, fullname, token="TGqrFD45yIPKAHxgSJW8QWAS") {
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('fullname', fullname);
+// export async function uploadPDF(file, fullname, token="TGqrFD45yIPKAHxgSJW8QWAS") {
+//     try {
+//       const formData = new FormData();
+//       formData.append('file', file);
+//       formData.append('fullname', fullname);
   
-      const response = await fetch('https://api.sat.tausi.africa/v1/mpesa/upload_pdf', {
+//       const response = await fetch('https://api.sat.tausi.africa/v1/mpesa/upload_pdf', {
+//         method: 'POST',
+//         body: formData,
+//         headers: {
+//           'Authorization': `Bearer ${token}`
+//         }
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error('Failed to upload PDF');
+//       }
+  
+//       const data = await response.json();
+//       return data;
+//     } catch (error) {
+//       console.error('Error uploading PDF:', error);
+//       return null;
+//     }
+  //}
+  const uploadPdf = async (username, file) => {
+    const apiKey = 'TGqrFD45yIPKAHxgSJW8QWAS';
+    const url = 'https://api.sat.tausi.africa/v1/mpesa/upload_pdf';
+  
+    const formData = new FormData();
+    formData.append('fullname', username);
+    formData.append('file', file);
+  
+    try {
+      const response = await fetch(url, {
         method: 'POST',
         body: formData,
         headers: {
-          'Authorization': `Bearer ${token}`
-        }
+          Authorization: `Bearer ${apiKey}`,
+        },
       });
   
       if (!response.ok) {
-        throw new Error('Failed to upload PDF');
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
       }
   
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Error uploading PDF:', error);
-      return null;
+      throw new Error(error.message);
     }
-  }
+  };
   
+  export { uploadPdf };
+export function APIcall(name,file){
+const myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer TGqrFD45yIPKAHxgSJW8QWAS");
+
+
+
+const formdata = new FormData();
+formdata.append("file", file);
+formdata.append("fullname", name);
+
+const requestOptions = {
+  method: "POST",
+  headers:  myHeaders,
+  body: formdata,
+  redirect: "follow",
+  mode: 'no-cors'
+};
+console.log(requestOptions);
+fetch("https://api.sat.tausi.africa/v1/mpesa/upload_pdf", requestOptions)
+  .then((response) => response.text())
+  .then((result) => {
+    console.log( result)
+    return result
+})
+  .catch((error) =>   { 
+    console.log(error)
+    return error
+  })
+}
+// Data.js from chat with flask
+export async function APIcall2(name, file) {
+    const formdata = new FormData();
+    formdata.append("fullname", name);
+    formdata.append("file", file);
+
+    const requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow",
+        mode: 'no-cors'
+    };
+
+    try {
+        const response = await fetch("http://localhost:5000/api/upload_pdf", requestOptions);
+        console.log(response)
+        const result_1 =  await response.data;
+        console.log(result_1);
+        return result_1;
+    } catch (error) {
+        console.error(error);
+        return error;
+    }
+}
+
+export function testCall(fileInput){
+const myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer TGqrFD45yIPKAHxgSJW8QWAS");
+
+const formdata = new FormData();
+formdata.append("fullname", "sydney ");
+formdata.append("file", fileInput, "/C:/Users/User/Downloads/M-Pesa Statement yakobo.pdf");
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: formdata,
+  redirect: "follow"
+};
+
+fetch("https://api.sat.tausi.africa/v1/mpesa/upload_pdf", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+}
 
 export const data={
     "info": {
@@ -181,16 +284,16 @@ export const data={
 };
 export  const data2={
     "info": {
-        "owners_number": "255756339626",
+        "owners_number": "",
         "start_date": "2023-06-30 03:25:00",
         "end_date": "2024-02-26 07:12:00",
-        "total_days": 242,
-        "total_active_days": 127
+        "total_days": 0,
+        "total_active_days": 0
     },
     "profile": {
-        "current_wallet_balance": 0.04,
-        "turnover": 48594106.0,
-        "number_of_transactions": 953
+        "current_wallet_balance": 0,
+        "turnover": 0,
+        "number_of_transactions": 0
     },
     "cashin_flow": {
         "total_cash-in_flow": 24489861.0,

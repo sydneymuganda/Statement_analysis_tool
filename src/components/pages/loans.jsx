@@ -1,10 +1,9 @@
 import React from 'react';
-
+import Loandata from '../contents/Loandata';
 const Loans = () => {
   return (
     <div className='page'>
-      <h1>Loans</h1>
-      {/* Add your JSX code here */}
+      <Loandata />
     </div>
   );
 };

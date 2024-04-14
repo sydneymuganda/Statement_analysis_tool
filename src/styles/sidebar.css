@@ -4,6 +4,8 @@ display: flex;
 flex-direction: column;
 gap:10px;
 height: fit-content;
+color: #e1e9f4;
+
 }
 .logo{
     text-align:center;
@@ -31,13 +33,10 @@ height: fit-content;
     font-weight: 600;
     padding: 10px;
     transition: 0.3s ease-in-out;
-    color:#27374d ;
+    color:#f3f7fd ;
 }
 .menu--list .item:hover{
     background:#27374d ;
     color:#e1e9f4 ;
 }
-.content {
-    flex: 1; /* Take remaining width */
-    padding: 20px; /* Add padding for spacing */
-  }
+

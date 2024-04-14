@@ -1,0 +1,11 @@
+.nav {
+    flex: 1; /* Take remaining width */
+    padding: 20px; /* Add padding for spacing */
+    /* border-radius: 20px; */
+    padding: 2rem;
+    display: flex;
+    gap:1;
+    background: rgb(39, 27, 62);
+   width: 100%;
+   height: fit-content;
+  }
