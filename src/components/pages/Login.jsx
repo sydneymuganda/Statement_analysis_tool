@@ -5,10 +5,10 @@ import { ImFilesEmpty } from "react-icons/im";
 import { FiUpload } from "react-icons/fi";
 import '../../styles/login.css';
 import { useNavigate } from 'react-router';
-import { data,APIcall,APIcall2 } from '../../Data/data';
-import { testCall } from '../../Data/data';
-import { uploadPdf ,AxiosPdf} from '../../Data/functions';
-import axios from 'axios';
+
+
+import { AxiosPdf} from '../../Data/functions';
+
 const apikey=import.meta.env.VITE_APIKEY;
 
 
@@ -52,22 +52,17 @@ const Login=()=>{
       return; // Exit early if any required field is missing
     }
 
-    // const formData = new FormData();
-    // formData.append('fullname', username);
-    // formData.append('file', file);
-    // try {
-    //     const response = await axios.post('http://localhost:5000/api/upload_pdf', formData);
-    //     navigate('/cashflow',{replace:true,state:{username,file}});
-    //     console.log('API response:', response.data);
-    //     // Handle response as needed
-    // } catch (error) {
-    //     console.error('Error uploading PDF:', error);
-    // }
+    
     try {
-      const response = await AxiosPdf(username, file);
+      const response = await AxiosPdf(username, file,paymentMethod);
       console.log('API response:', response);
-        
-     navigate('/cashflow',{replace:true,state:{username,file,response}});
+      localStorage.clear();
+      localStorage.setItem('username', username);
+      localStorage.setItem('paymentMethod', paymentMethod);
+      localStorage.setItem('response',response)
+
+ 
+     navigate('/cashflow',{replace:true,state:{username,paymentMethod,response}});
       // Redirect or handle response as needed
     } catch (error) {
       console.error('Error uploading PDF:', error);
@@ -98,6 +93,7 @@ const Login=()=>{
             <option value="Mpesa">Mpesa</option>
             <option value="Tigopesa">Tigopesa</option>
             <option value="Halopesa">Halopesa</option>
+            <option value="Airtelmoney">Airtelmoney</option>
           </select>
           <ImFilesEmpty className='login-icon' />
         </div>

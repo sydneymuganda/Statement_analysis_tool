@@ -1,8 +1,8 @@
 import React from "react";
-import { data2 } from '../../Data/data';
-import { dateSplicer,numberEdit } from "../../Data/functions";
-import { Dchart } from "../Charts.jsx/Doghnut";
-import '../../styles/pages.css';
+import { data2 } from '../../../Data/data';
+import { dateSplicer,numberEdit } from "../../../Data/functions";
+import { Dchart } from "../../Charts.jsx/Doghnut";
+import '../../../styles/pages.css';
 import {useLocation} from 'react-router-dom'
 
 // for bill transactions

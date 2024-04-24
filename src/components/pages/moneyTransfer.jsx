@@ -1,9 +1,23 @@
 import React from "react";
-import Money from "../contents/Money";
+import Money from "../contents/voda/Money";
+import TMoney from "../contents/tigo/TMoney";
+import HMoney from "../contents/halotel/HMoney";
+import AMoney from "../contents/airtel/AMoney";
+
+
 const Transfers =()=>{
-    return (
-      <Money />
-      );
+  var payMethod=localStorage.getItem('paymentMethod')
+  if (payMethod===null|| payMethod==='Mpesa'){
+    return (  <Money /> );
+  }else if (payMethod==='Tigopesa'){
+    return (  <TMoney /> );
+  }else if (payMethod==='Halopesa'){
+    return (  <HMoney /> );
+ }else if (payMethod==='Airtelmoney'){
+   return (  <AMoney /> );
+ }else{
+  return (  <Money /> );
+ }
 
 
 }

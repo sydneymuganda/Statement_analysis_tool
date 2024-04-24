@@ -1,30 +1,28 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom'
-import { data2 } from '../../Data/data';
-import '../../styles/pages.css';
+import { Hdata } from '../../../Data/data';
+import '../../../styles/pages.css';
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { Dchart } from '../Charts.jsx/Doghnut';
+import { Dchart } from '../../Charts.jsx/Doghnut';
 
-import { numberEdit,dateSplicer } from '../../Data/functions';
+import { numberEdit,dateSplicer } from '../../../Data/functions';
 
-const CashAnalysis = () => {
-  const location=useLocation();
-  var data=data2;
-  if (location.state!==null )
-  { data= JSON.parse(location.state.response)}
-  else{data=data2; 
-  console.log("no data", typeof data)};
-  const labels=['banking','bills','luku','agent_transactions','money_transfers','loans']
+const HCashAnalysis = () => {
+
+  var data=Hdata;
+ 
+  
+  const labels=['Banking','Merchant Paymets','Luku','agent_transactions','money_transfers']
   const Chartdata={
     labels:labels,
     datasets:[{
       label:'usage',
-      data:[(data.CRDB_Summary.total_Amount_transfered_from_crdb_to_wallet+data.NMB_Summary.total_Amount_transfered_from_nmb_to_wallet),
-        (data.lipa_summary.total_amount_paid_via_lipa+data.bill_payment_summary.total_amount_paid_bills),
-        data.Luku_Summary.total_luku_amount,
-        ,data.agent_deposit_summary.total_amount_deposited+data.agent_withdraw_summary.total_amount_withdrawn_via_agent,
-        data.agent_deposit_summary.total_amount_deposited+data.agent_withdraw_summary.total_amount_withdrawn_via_agent,
-        ,data.chomoka_summary]
+      data:[(data.b2w.total_amount_transferred_from_bank_to_wallet+data.w2b.total_amount_transferred_from_wallet_to_bank),
+        (data.merchant_payments.total_amount_paid),
+        data.luku.total_amount_used_to_buy_luku,
+        ,data.agent_withdraw.total_amount_withdrawn_via_agent+data.agent_deposit.total_amount_deposited,
+        data.money_sent_p2p.total_amount_sent_to_peer+data.money_received_p2p.total_amount_received_from_peer,
+        ]
     }],
     backgroundColor:['blue','green','purple','red','black','yellow']
     ,
@@ -40,7 +38,7 @@ const CashAnalysis = () => {
 
            <div  className='message'> 
 
-               <h3 ><b>hello <br /> {location.state===null? "jane doe" :location.state.username}</b></h3>
+               <h3 ><b>hello <br />  {localStorage.getItem('username')===null? "jane doe" :localStorage.getItem('username')}</b></h3>
                <h3 ><b>Number: <br /> {data.info.owners_number} </b></h3>
         
         </div>
@@ -48,7 +46,7 @@ const CashAnalysis = () => {
 
         <div  className="balance">
            <h3 className='balance-title'>available balance :</h3> <br />
-           <h3 className='balance-number'> {data.profile.current_wallet_balance} </h3>
+           <h3 className='balance-number'> {data.profile.current_balance} </h3>
         </div>
 
       </div>
@@ -85,7 +83,7 @@ const CashAnalysis = () => {
 
             
         
-          {Dchart(Chartdata,"usage chart")}
+          {Dchart(Chartdata,"usage chart",false)}
 
           <br />
           
@@ -148,4 +146,4 @@ const CashAnalysis = () => {
   
  
 
-export default CashAnalysis;
+export default HCashAnalysis;

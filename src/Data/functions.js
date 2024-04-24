@@ -1,5 +1,6 @@
 import { Axios } from 'axios';
-const apikey=import.meta.env.VITE_APIKEY;
+import axios from 'axios';
+
 export function dateSplicer(dateTimeString) {
 
     
@@ -17,48 +18,23 @@ return number.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractio
 
 }
 
-// data.js
-
-export async function uploadPdf(fullname, file) {
-    const formData = new FormData();
-    formData.append('fullname', fullname);
-    formData.append('file', file);
-  
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer TGqrFD45yIPKAHxgSJW8QWAS', // Replace XXXXXXXXXXX with your actual token
-      },
-      body: formData,
-    };
-  
-    try {
-      const response = await fetch('https://api.sat.tausi.africa/v1/mpesa/upload_pdf', requestOptions);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error uploading PDF:', error);
-      throw error;
-    }
-  }
   
   // data.js
 
-import axios from 'axios';
 
-export async function AxiosPdf(fullname, file) {
+
+export async function AxiosPdf(fullname, file,paymentMethod) {
   const formData = new FormData();
   formData.append('fullname', fullname);
   formData.append('file', file);
+  formData.append('statement',paymentMethod)
 
   const config = {
     method: 'post',
     url: 'http://localhost:5000/api/upload_pdf',
     data: formData,
     mode: 'no-cors', // Set no-cors mode
+    
   };
 
   try {

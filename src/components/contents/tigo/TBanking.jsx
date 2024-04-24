@@ -1,21 +1,21 @@
 import React from 'react';
-import { data2 } from '../../Data/data';
-import '../../styles/pages.css';
-import { dateSplicer,numberEdit } from '../../Data/functions';
-import { Dchart } from '../Charts.jsx/Doghnut';
+import { Tdata } from '../../../Data/data';
+import '../../../styles/pages.css';
+import { dateSplicer,numberEdit } from '../../../Data/functions';
+import { Dchart } from '../../Charts.jsx/Doghnut';
 import {useLocation} from 'react-router-dom'
 
-const Banking = () => {
+const TBanking = () => {
   const location=useLocation();
-  var data=data2;
-  if (location.state!==null){ data= JSON.parse(location.state.response)} else{data=data2; };
-  const labels=['CRDB','NMB']
+  var data=Tdata;
+  if (location.state!==null){ data= JSON.parse(location.state.response)} 
+  const labels=['B2W','W2B']
   const Chartdata1={
     labels:labels,
     datasets:[{
       label:'amount transfered',
-      data:[(data.CRDB_Summary.total_Amount_transfered_from_crdb_to_wallet),
-        (data.NMB_Summary.average_amount_transfered_from_nmb_to_wallet),
+      data:[(data.B2W.Total_amount_transferred_from_bank_to_wallet),
+        (data.W2B.Total_amount_transferred_from_wallet_to_bank),
        
         ]
     }],
@@ -28,9 +28,9 @@ const Banking = () => {
     const Chartdata2={
       labels:labels,
       datasets:[{
-        label:'amount transfered',
-        data:[(data.CRDB_Summary.number_of_times_transfered_from_crdb_to_wallet),
-          (data.NMB_Summary.number_of_times_transfered_from_nmb_to_wallet),
+        label:'amount of times  transfered',
+        data:[(data.B2W.Number_of_times_trasnferred_from_bank_to_wallet),
+          (data.W2B.Number_of_times_trasnferred_from_wallet_to_bank),
          
           ]
       }],
@@ -61,7 +61,7 @@ const Banking = () => {
             <caption> Banking Analysis</caption>
             <thead>
             <tr>
-                <th colSpan={4}> CRDB</th>
+                <th colSpan={4}> {'Bank to Wallet (B2B)' }</th>
             </tr>
             </thead>
             
@@ -73,16 +73,16 @@ const Banking = () => {
             </tr>
             <tbody>
             <tr>
-            <td> {numberEdit(data.CRDB_Summary.max_amount_transfered_from_crdb_to_wallet)}</td>
-            <td>{numberEdit(data.CRDB_Summary.average_amount_transfered_from_crdb_to_wallet)}</td>
-            <td>{dateSplicer(data.CRDB_Summary.last_date_transferred_from_crdb)}</td>
-            <td>{numberEdit(data.CRDB_Summary.last_amount_transferred_from_crdb_to_wallet)}</td>
+            <td> {numberEdit(data.B2W.Maximum_amount_transferred_from_bank_to_wallet)}</td>
+            <td>{numberEdit(data.B2W.Average_amount_transferred_from_bank_to_wallet)}</td>
+            <td>{dateSplicer(data.B2W.Last_time_transferred_from_bank_to_wallet)}</td>
+            
  
             </tr>
             </tbody>
              <thead>
             <tr>
-                <th colSpan={4}> NMB</th>
+                <th colSpan={4}> {'wallet to bank (W2B)'}</th>
             </tr>
             </thead>
             <tr>
@@ -93,10 +93,9 @@ const Banking = () => {
             </tr>
 
             <tr>
-            <td> {numberEdit(data.NMB_Summary.max_amount_transfered_from_nmb_to_wallet)}</td>
-            <td>{numberEdit(data.NMB_Summary.average_amount_transfered_from_nmb_to_wallet)}</td>
-            <td>{dateSplicer(data.NMB_Summary.last_date_transferred_from_nmb)}</td>
-            <td>{numberEdit(data.NMB_Summary.last_amount_transferred_from_nmb_to_wallet)}</td>
+           <td> {numberEdit(data.W2B.Maximum_amount_transferred_from_wallet_to_bank)}</td>
+            <td>{numberEdit(data.W2B.Average_amount_transferred_from_wallet_to_bank)}</td>
+            <td>{dateSplicer(data.W2B.Last_time_transferred_from_wallet_to_bank)}</td>
 
             </tr>
 
@@ -108,4 +107,4 @@ const Banking = () => {
     );
   };
   
-  export default Banking;
+  export default TBanking;

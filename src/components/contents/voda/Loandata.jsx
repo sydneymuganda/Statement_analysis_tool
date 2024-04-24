@@ -1,14 +1,14 @@
 import React from "react";
-import { data2 } from '../../Data/data';
-import { dateSplicer,numberEdit } from "../../Data/functions";
-import { Dchart } from "../Charts.jsx/Doghnut";
-import '../../styles/pages.css';
-import {useLocation} from 'react-router-dom'
+import { data2 } from '../../../Data/data';
+import { dateSplicer,numberEdit } from "../../../Data/functions";
+
+import '../../../styles/pages.css';
+
 // for bill transactions
 const Loandata =()=>{
-const location=useLocation();
+
   var data=data2;
-  if (location.state!==null){ data= JSON.parse(location.state.response)};
+  
     return(
        <div className="expenses-container">
          <div className="banking-table">

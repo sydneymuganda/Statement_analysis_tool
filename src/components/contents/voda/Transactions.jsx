@@ -1,12 +1,12 @@
 import React from "react";
-import { data2,data } from '../../Data/data';
-import { dateSplicer,numberEdit } from "../../Data/functions";
-import { Dchart } from "../Charts.jsx/Doghnut";
-import '../../styles/pages.css';
-import {useLocation} from 'react-router-dom'
+import { data2 } from '../../../Data/data';
+import { dateSplicer,numberEdit } from "../../../Data/functions";
+import { Dchart } from "../../Charts.jsx/Doghnut";
+import '../../../styles/pages.css';
+
 //agent transactions
 const Moneytransactions =()=>{
-  const location=useLocation();
+ 
   var data=data2;
   if (location.state!==null){ data= JSON.parse(location.state.response)};
     const labels=['Agent withdrawal', 'Agent Deposit']
