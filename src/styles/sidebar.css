@@ -4,12 +4,14 @@ display: flex;
 flex-direction: column;
 gap:10px;
 height: fit-content;
-color: #e1e9f4;
+color: #061932;
+position:relative;
+left: 0;
 
 }
 .logo{
     text-align:center;
-    padding:20px;
+    padding:10px;
     color: #27374d;
     align-items: center;
     display: flex;

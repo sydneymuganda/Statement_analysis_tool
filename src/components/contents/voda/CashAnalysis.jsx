@@ -55,24 +55,24 @@ const CashAnalysis = () => {
 
       <div className="middle">
 
-           <div id='time01' className="date">
+           <div  className="date">
 
-          <h3>Statement Analysis From:</h3> <br />
+          <h3>Statement Analysis From :</h3> 
           <h3> {dateSplicer(data.info.start_date)} <IoMdArrowRoundForward/>  {dateSplicer(data.info.end_date)} </h3>
 
           </div> <br />
 
     
 
-         <div id='details01' className="details">
+         <div  className="details">
 
-        <h3>Active Days : <br />
+        <h3>Active Days : 
          {data.info.total_days} </h3> <br />
 
-        <h3>Active Transacting Days : <br />
+        <h3>Active Transacting Days : 
          {data.info.total_active_days} </h3> <br />
 
-        <h3> Number of Transactions Made : <br />
+        <h3> Number of Transactions Made : 
          {data.profile.number_of_transactions} </h3>  <br />
 
         </div>
@@ -101,7 +101,7 @@ const CashAnalysis = () => {
     
       
       <div id='table01' className="table">
-       <table className='analysis_table'>
+       <table className='banking-table'>
 
        <caption> Cash Flow Analysis</caption>
 

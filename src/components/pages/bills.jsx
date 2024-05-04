@@ -1,5 +1,6 @@
 import React from 'react';
 
+import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
 import Expenses from '../contents/voda/Expenses';
 import TExpenses from '../contents/tigo/TExpenses';
 import AExpenses from '../contents/airtel/AExpenses';

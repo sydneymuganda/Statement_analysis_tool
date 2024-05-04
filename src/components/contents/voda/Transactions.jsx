@@ -8,7 +8,7 @@ import '../../../styles/pages.css';
 const Moneytransactions =()=>{
  
   var data=data2;
-  if (location.state!==null){ data= JSON.parse(location.state.response)};
+  
     const labels=['Agent withdrawal', 'Agent Deposit']
     const Chartdata1={
       labels:labels,

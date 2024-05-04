@@ -23,11 +23,11 @@ function App() {
   return ( 
     
     <Router>
-      <div className='dashboard'>
+      <div className='dashboard '>
       
-        <Sidebar />
+        <Sidebar className ='sidebar-component' />
         <div className='flex flex-col'>
-        {/* <Navbar/> */}
+         <Navbar/> 
         <div className="content">
         <Routes>
           <Route path='/' element={<Login/>} />

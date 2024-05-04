@@ -2,7 +2,7 @@ import React from 'react';
 
 import Moneytransactions from '../contents/voda/Transactions';
 import TMoneytransactions from '../contents/tigo/TTransactions';
-
+import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
 
 const Agent = () => {
   var payMethod=localStorage.getItem('paymentMethod')

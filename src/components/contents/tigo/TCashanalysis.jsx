@@ -79,7 +79,7 @@ const TCashAnalysis = () => {
 
       <div className="right">
 
-          <div id='chart01' className="chart">
+          <div  className="chart">
 
             
         
@@ -98,7 +98,7 @@ const TCashAnalysis = () => {
 
     
       
-      <div id='table01' className="table">
+      <div  className="table">
        <table className='analysis_table'>
 
        <caption> Cash Flow Analysis</caption>

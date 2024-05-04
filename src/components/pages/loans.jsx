@@ -3,6 +3,8 @@ import Loandata from '../contents/voda/Loandata';
 import TLoandata from '../contents/tigo/TLoandata';
 import HLoandata from '../contents/halotel/HLoandata';
 import ALoandata from '../contents/airtel/ALoandata';
+import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
+
 const Loans = () => {
   var payMethod=localStorage.getItem('paymentMethod')
   

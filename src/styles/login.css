@@ -4,22 +4,25 @@
     box-sizing: border-box;
 }
 
- body{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ /* body{
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale; 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     
-    background:url('../assets/background2.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-} 
+    /* background:url('../assets/background2.jpg') no-repeat;
+    background-size: cover; */
+    /* background-position: center; 
+}
+    */
+  
+
 .login{
     width: fit-content;
     background: transparent;
-    color: whitesmoke;
+    color: rgb(5, 10, 61);
     min-height: fit-content;
     border-radius: 10px;
     padding: 30px 40px;

@@ -3,12 +3,12 @@ import { data2 } from '../../../Data/data';
 import '../../../styles/pages.css';
 import { dateSplicer,numberEdit } from '../../../Data/functions';
 import { Dchart } from '../../Charts.jsx/Doghnut';
-import {useLocation} from 'react-router-dom'
+
 
 const Banking = () => {
-  const location=useLocation();
+  
   var data=data2;
-  if (location.state!==null){ data= JSON.parse(location.state.response)} else{data=data2; };
+  
   const labels=['CRDB','NMB']
   const Chartdata1={
     labels:labels,

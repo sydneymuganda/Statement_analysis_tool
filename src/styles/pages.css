@@ -1,6 +1,6 @@
 
 .page{
-    display: flex;
+    display:flex;
     
     gap:10px;
     height:100%;
@@ -50,15 +50,17 @@ color: #333;
     padding: 10px;
   }
   .table{
-    /* position: absolute;
-    bottom: 0; */
+   
      
     
-    
-    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: small;
+
     margin: 1 em auto;
-    width:60%;
-    height: 20%;
+    width:fit-content;
+    height: fit-content;
+    background: rgb(75, 142, 249);
   
   }
   
@@ -67,6 +69,7 @@ color: #333;
     width: 80%;
     border:  1px solid rgb(146, 139, 239);
     height: fit-content;
+    background: rgb(75, 142, 249);
     /* z-index: 1; */
 
 }
@@ -97,6 +100,11 @@ td, th {
     justify-content: center;
     text-align: center;
 
+  }
+  .balance{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgb(75, 142, 249);
   }
 
   .balance-title{
@@ -130,8 +138,15 @@ td, th {
     text-shadow: greenyellow;
   }
 .details{
-margin-bottom: 5px;
+/* margin-bottom: 5px; */
+gap: 10px;
 text-align: center;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin: 1rem;
+font-weight: bold;
+width: 20em;
+background: rgb(75, 142, 249);
 }
 .details h3{
   margin-bottom: 1rem;
@@ -139,6 +154,14 @@ text-align: center;
 .date{
 margin: 1rem;
 text-align: center;
+padding: 20px;
+background-color: rgb(110, 17, 110,0.2);
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin: 1rem;
+font-weight: bold;
+gap: 10px;
+background: rgb(75, 142, 249);
 }
 
 
@@ -152,13 +175,22 @@ text-align: center;
   }
   .B-top .chart-section{
   float: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   }
   .B-top .chart-section2{
     float: right;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
     }
- 
+.chart-section, .chart-section2, .chart-average, .chart-total{
+  border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgb(75, 142, 249);
+}
+
 
 .B-bottom{
   /* position: absolute;
@@ -167,6 +199,7 @@ text-align: center;
   max-height: 40%;
   min-height: fit-content;
   margin-bottom: 1rem;
+  
 }
   .banking-table{
     border-collapse: collapse;
@@ -213,6 +246,13 @@ text-align: center;
   position: relative;
   height: 50%;
   bottom: 0;
+  background: rgb(75, 142, 249);
+}
+
+.chart{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgb(75, 142, 249);
 }
 
 
@@ -222,11 +262,17 @@ text-align: center;
   float: left;
   margin: 1rem;
   height: 90%;
+  background: rgb(75, 142, 249);
 
 }
 .chart-average{
 float: right;
 height: 90%;
 margin: 1rem;
+background: rgb(75, 142, 249);
 
+}
+.B-table{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

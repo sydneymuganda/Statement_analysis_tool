@@ -4,6 +4,7 @@ import TMoney from "../contents/tigo/TMoney";
 import HMoney from "../contents/halotel/HMoney";
 import AMoney from "../contents/airtel/AMoney";
 
+import "C:/Users/User/Desktop/frontend/dashBoard/src/styles/pages.css";
 
 const Transfers =()=>{
   var payMethod=localStorage.getItem('paymentMethod')
